@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Example</title>
+  <style>
+    .header {
+      /*color: newColor;*/
+      padding-left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1 ondblclick="doSomething()" onmouseenter="doAThirdThing(event)">Alexander Hamilton</h1>
+  <p onclick="doSomethingElse()">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+  <p id="demo"></p>
+  <button onclick="turnHeaderRed()">Change Header</button>
+  <script>
+    function doSomething() {
+      console.log("You clicked on the header!");
+    }
+    function doSomethingElse() {
+      console.log("Did you see the show?");
+    }
+    function doAThirdThing(event) {
+      document.getElementById("demo").innerHTML = event.clientX + "," + event.clientY;
+    }
+    function turnHeaderRed() {
+      var letters = ["a","b","c","d","e","f",0,1,2,3,4,5,6,7,8,9]
+      var newColor = "#"
+      for (i = 0; i < 6; i++) {
+        newColor += letters[Math.floor(Math.random()*16)]
+      }
+      // console.log(newColor);
+      var header = document.querySelector('h1')
+      header.classList.add('header');
+      header.style.color = newColor
+    }
+  </script>
+</body>
+</html>

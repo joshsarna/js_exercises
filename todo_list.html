@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Example</title>
+    <style>
+      .complete {
+        text-decoration: line-through;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <p onclick="completeTask(this)">Pay bills</p>
+    <p onclick="completeTask(this)">Wash car</p>
+    <p onclick="completeTask(this)">Get laundry</p>
+
+    <button onclick="hideCompletedTasks()">Hide Completed Tasks</button>
+    <button onclick="showAllTasks()">Show All Tasks</button>
+    <script>
+      function completeTask(ptag) {
+        ptag.classList.toggle('complete');
+      }
+
+      function hideCompletedTasks() {
+        ptags = document.querySelectorAll('.complete')
+        // console.log(ptags);
+        for (i = 0; i < ptags.length; i++) {
+          ptags[i].classList.add('hidden')
+        }
+      }
+
+      function showAllTasks() {
+        ptags = document.querySelectorAll('.hidden')
+        for (i = 0; i < ptags.length; i++) {
+          ptags[i].classList.toggle('hidden')
+        }
+      }
+    </script>
+  </body>
+</html>

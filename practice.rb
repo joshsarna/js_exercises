@@ -62,14 +62,20 @@
 
 // # Write a method that accepts two arrays of numbers, and prints the sum of every combination of numbers from first and second array. 
 // # For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should print a list: 101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
-def sums(array1,array2)
-  sums = []
-  array1.each do |element1|
-    array2.each do |element2|
-      sums << element1 + element2
-    end
-  end
-  sums
-end
+# def sums(array1,array2)
+#   sums = []
+#   array1.each do |element1|
+#     array2.each do |element2|
+#       sums << element1 + element2
+#     end
+#   end
+#   sums
+# end
 
-p sums([1, 5, 10], [100, 500, 1000])
+# p sums([1, 5, 10], [100, 500, 1000])
+
+array = (1..10)
+p array
+array.each do |num|
+  p num
+end
